@@ -239,6 +239,7 @@ function networkDown () {
     # Bring down the network, deleting the volumes
     #Delete any ledger backups
     docker run -v $PWD:/tmp/first-network --rm hyperledger/fabric-tools:$IMAGETAG rm -Rf /tmp/first-network/ledgers-backup
+    docker run -v $PWD:/tmp/first-network --rm hyperledger/fabric-tools:$IMAGETAG rm -Rf /tmp/first-network/reconfig-inputs/outputs
     #Cleanup the chaincode containers
     clearContainers
     #Cleanup images
